@@ -37,6 +37,22 @@
         </div>
 
         <div class="mb-4">
+
+                <label for="type_id" class="form-label">Types </label>
+                <select class="form-select @error('type_id') is-invalid  @enderror" name="type_id" id="type_id">
+                    <option selected disabled>Select Types 👇</option>
+                    <option value="">Uncategorized</option>
+                    @forelse ($types as $type)
+                    <option value="{{$type->id}}" {{ $type->id == old('type_id') ? 'selected' : '' }}>{{$type->name}}</option>
+                    @empty
+
+                    @endforelse
+
+                </select>
+
+        </div>
+
+        <div class="mb-4">
             <label for="project_link" class="form-label">
                 GITHUB LINK 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
