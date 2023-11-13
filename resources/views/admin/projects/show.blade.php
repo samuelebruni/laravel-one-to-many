@@ -9,6 +9,9 @@
                 {{-- <img style="aspect-ratio: 1 / 1.5" src="{{  }}" alt="{{ $project->title }}"> --}}
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ $project->title }}</h5>
+                    <div class="badge bg-primary text-center">
+                        {{$project->type ? $project->type->name : 'Uncategorized' }}
+                    </div>
                     <p class="card-text mt-4">
                         <strong>Descrizione:</strong>
                         {{ $project->description }}
@@ -41,11 +44,6 @@
                             </a>
                         </div>
                     </li>
-                </ul>
-                <ul>
-                    <span class="badge bg-primary">
-                        
-                    </span>
                 </ul>
             </div>
         </div>

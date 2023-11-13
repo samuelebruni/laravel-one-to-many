@@ -75,7 +75,6 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        
         $validate_data = $request->validated();
 
         if ($request->has('cover_image') && $project->cover_image) {
