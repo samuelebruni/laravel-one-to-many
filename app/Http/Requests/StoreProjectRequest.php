@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required|min:3|max:50',
             'project_link' => 'nullable|min:2',
             'description' => 'nullable',
-            'type_id' => Rule::exists('types','id')->where('id',$this->request->get('type_id')),
+            'type_id' => 'nullable|exists:types,id',
             'online_link' => 'nullable'
         ];
     }
